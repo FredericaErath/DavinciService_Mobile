@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/wxDemo/wxDemo"],{
 
 /***/ 100:
-/*!***************************************************************************************!*\
-  !*** F:/DavinciMobile/davincimobile/pages/wxDemo/wxDemo.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** F:/DavinciFrontend/DavinciService_Mobile/pages/wxDemo/wxDemo.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -17,9 +17,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 101:
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/DavinciMobile/davincimobile/pages/wxDemo/wxDemo.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/DavinciFrontend/DavinciService_Mobile/pages/wxDemo/wxDemo.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -71,7 +71,7 @@ var _default = {
     };
   },
   onShow: function onShow() {
-    if (!this.isLogin) this.$u.wx.wxOauth();
+    // if (!this.isLogin) this.$u.wx.wxOauth()
   },
   onLoad: function onLoad() {},
   methods: {
@@ -176,9 +176,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 96:
-/*!*********************************************************************************!*\
-  !*** F:/DavinciMobile/davincimobile/main.js?{"page":"pages%2FwxDemo%2FwxDemo"} ***!
-  \*********************************************************************************/
+/*!*******************************************************************************************!*\
+  !*** F:/DavinciFrontend/DavinciService_Mobile/main.js?{"page":"pages%2FwxDemo%2FwxDemo"} ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -197,9 +197,9 @@ createPage(_wxDemo.default);
 /***/ }),
 
 /***/ 97:
-/*!**************************************************************!*\
-  !*** F:/DavinciMobile/davincimobile/pages/wxDemo/wxDemo.vue ***!
-  \**************************************************************/
+/*!************************************************************************!*\
+  !*** F:/DavinciFrontend/DavinciService_Mobile/pages/wxDemo/wxDemo.vue ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -236,9 +236,9 @@ component.options.__file = "pages/wxDemo/wxDemo.vue"
 /***/ }),
 
 /***/ 98:
-/*!*********************************************************************************************!*\
-  !*** F:/DavinciMobile/davincimobile/pages/wxDemo/wxDemo.vue?vue&type=template&id=c4839574& ***!
-  \*********************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** F:/DavinciFrontend/DavinciService_Mobile/pages/wxDemo/wxDemo.vue?vue&type=template&id=c4839574& ***!
+  \*******************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -258,9 +258,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 99:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/DavinciMobile/davincimobile/pages/wxDemo/wxDemo.vue?vue&type=template&id=c4839574& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/DavinciFrontend/DavinciService_Mobile/pages/wxDemo/wxDemo.vue?vue&type=template&id=c4839574& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -274,16 +274,16 @@ var components
 try {
   components = {
     uCellGroup: function () {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-cell-group/u-cell-group */ "uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-cell-group/u-cell-group.vue */ 116))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-cell-group/u-cell-group */ "uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-cell-group/u-cell-group.vue */ 133))
     },
     uCellItem: function () {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-cell-item/u-cell-item */ "uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-cell-item/u-cell-item.vue */ 123))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-cell-item/u-cell-item */ "uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-cell-item/u-cell-item.vue */ 140))
     },
     uAvatar: function () {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-avatar/u-avatar */ "uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-avatar/u-avatar.vue */ 130))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-avatar/u-avatar */ "uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-avatar/u-avatar.vue */ 147))
     },
     vToast: function () {
-      return __webpack_require__.e(/*! import() | components/v-toast/v-toast */ "components/v-toast/v-toast").then(__webpack_require__.bind(null, /*! @/components/v-toast/v-toast.vue */ 137))
+      return __webpack_require__.e(/*! import() | components/v-toast/v-toast */ "components/v-toast/v-toast").then(__webpack_require__.bind(null, /*! @/components/v-toast/v-toast.vue */ 154))
     },
   }
 } catch (e) {

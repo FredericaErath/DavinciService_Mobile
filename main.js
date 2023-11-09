@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App'
 import store from '@/store';
 import uView from "uview-ui";
+import tabBar from "components/tabbar/tabBar.vue"//引入我们自己定义的tabBar组件
 
 Vue.use(uView);
+Vue.component('tab-bar', tabBar)//使用tabBar组件
 Vue.config.productionTip = false
 
 

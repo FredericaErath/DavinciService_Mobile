@@ -19,6 +19,9 @@
 				<view style="width: 80%;">
 					<rudon-multiSelector :is_using_slot="false" :is_using_icon="true" :localdata="n_options"
 						@change="whenChanged1">
+						<view>
+							{{JSON.stringify(n_options)}}
+						</view>
 					</rudon-multiSelector>
 				</view>
 			</u-form-item>
@@ -26,6 +29,9 @@
 				<view style="width: 80%;">
 					<rudon-multiSelector :is_using_slot="false" :is_using_icon="true" :localdata="n_options2"
 						@change="whenChanged2">
+						<view>
+							{{JSON.stringify(n_options2)}}
+						</view>
 					</rudon-multiSelector>
 				</view>
 			</u-form-item>
@@ -38,7 +44,7 @@
 			</u-form-item>
 			<u-form-item>器械：
 				<view>
-					{{instruementSelectList}}
+					{{instrumentSelectList}}
 				</view>
 				<u-button style="margin-right: 5rpx; max-height: 60rpx; max-width: 170rpx;"
 					@click="show6=true">+添加器械</u-button>
@@ -74,14 +80,16 @@
 					</view>
 				</u-popup>
 			</u-form-item>
-			<u-button style="margin-top: 5%;">提交</u-button>
+			<u-button style="margin-top: 5%;" @click="OnSubmitSur">提交</u-button>
 		</u-form>
 	</view>
 </template>
 
 <script>
 	import {
-		get_users_api
+		get_users_api,
+		get_instrument,
+		insert_surgery,
 	} from '@/network/backend_api.js'
 	export default {
 		data() {
@@ -103,6 +111,7 @@
 				instrument: {
 					i_id: "",
 					name: "",
+					times: "",
 					description: "默认"
 				},
 				consumable: {
@@ -140,23 +149,7 @@
 				chiefSheet: [],
 				associateSheet: [],
 				consumableSelectList: "",
-				instruementSelectList: "",
-				options1: [{
-						text: '默认排序',
-						is_selected: false,
-						value: 0,
-					},
-					{
-						text: '距离优先',
-						is_selected: false,
-						value: 1,
-					},
-					{
-						text: '价格优先',
-						is_selected: false,
-						value: 2,
-					}
-				],
+				instrumentSelectList: "",
 			};
 		},
 		created() {
@@ -164,6 +157,20 @@
 		},
 		methods: {
 			initialize() {
+				this.form = {
+					name: '',
+					intro: '',
+					chief_surgeon: '',
+					associate_surgeon: '',
+					date: '',
+					admission_number: '',
+					department: '',
+					instrument_nurse: [],
+					circulating_nurse: [],
+					time: '',
+					instruments: [],
+					consumables: [],
+				}
 				get_users_api({
 					user_type: '医生'
 				}).then(res => {
@@ -231,13 +238,23 @@
 				this.form.circulating_nurse = e
 			},
 			onSubmitIns() {
-				this.form.consumables.push(this.consumable)
-				if (this.consumableSelectList == "") {
-					this.consumableSelectList = this.consumable.name
-				} else {
-					this.consumableSelectList = this.consumableSelectList + ", " + this.consumable.name
-				}
+				get_instrument({
+					i_id: this.instrument.i_id
+				}).then(res => {
+					this.instrument.i_id = res.data[0].i_id
+					this.instrument.name = res.data[0].i_name
+					this.instrument.times = res.data[0].times
+					this.form.instruments.push({i_id: this.instrument.i_id, description: this.instrument.description, times: this.instrument.times})
+					if (this.instrumentSelectList == "") {
+						this.instrumentSelectList = res.data[0].i_id + "号" + this.instrument.name
+					} else {
+						this.instrumentSelectList = this.instrumentSelectList + ", " + res.data[0].i_id + "号" +
+							this.instrument.name
+					}
+				})
 				this.instrument = {
+					i_id: "",
+					times: "",
 					name: "",
 					description: "默认"
 				}
@@ -245,7 +262,9 @@
 			},
 			onCancelIns() {
 				this.instrument = {
+					i_id: "",
 					name: "",
+					times: "",
 					description: "默认"
 				}
 				this.show6 = false
@@ -262,6 +281,36 @@
 					description: "默认"
 				}
 				this.show7 = false
+			},
+			OnSubmitSur() {
+				insert_surgery({
+					begin_time: this.form.time[0],
+					end_time: this.form.time[1],
+					date: new Date(this.form.date),
+					admission_number: this.form.admission_number,
+					department: this.form.department,
+					s_name: this.form.name,
+					p_name: this.form.intro,
+					chief_surgeon: this.form.chief_surgeon,
+					associate_surgeon: this.form.associate_surgeon,
+					instrument_nurse: this.form.instrument_nurse,
+					circulating_nurse: this.form.circulating_nurse,
+					instruments: this.form.instruments,
+					consumables: this.form.consumables,
+				}).then(res => {
+					if (res.status == 200) {
+						this.initialize()
+						uni.showToast({
+							title: '手术信息登记成功！',
+							duration: 2000
+						});
+					} else {
+						uni.showToast({
+							title: '手术信息登记失败！请检查输入内容',
+							duration: 2000
+						});
+					}
+				})
 			}
 
 		}

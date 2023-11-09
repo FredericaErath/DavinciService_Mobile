@@ -5,34 +5,51 @@
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/tabbar/index/index",
-			"style": {
-				"navigationBarTitleText": "首页"
-			}
-		},
-		{
-			"path": "pages/tabbar/user/user",
-			"style": {
-				"navigationBarTitleText": "我的"
-			}
-		}, {
-			"path": "pages/user/login/login",
-			"style": {
-				"navigationBarTitleText": "登录",
-				"enablePullDownRefresh": false,
-				"navigationStyle": "custom"
-			}
-		}, {
-			"path": "pages/wxDemo/wxDemo",
-			"style": {
-				"navigationBarTitleText": "微信功能体验",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
 			"path": "pages/nurse/surgery",
 			"style": {
 				"navigationBarTitleText": "录入手术信息",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/doctor/dash_board",
+			"style": {
+				"navigationBarTitleText": "医生数据看板",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/doctor/dashboard_detail",
+			"style": {
+				"navigationBarTitleText": "数据看板详情",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/doctor/daily_detail",
+			"style": {
+				"navigationBarTitleText": "每日手术详情",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/doctor/navigation",
+			"style": {
+				"navigationBarTitleText": "医生导航",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/doctor/personal",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/doctor/home",
+			"style": {
+				"navigationBarTitleText": "医生主页",
 				"navigationStyle": "custom"
 			}
 		}
@@ -48,21 +65,44 @@
 
 	},
 	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#e97516",
-		"borderStyle": "white",
-		"backgroundColor": "#fff",
-		"list": [{
-				"pagePath": "pages/tabbar/index/index",
-				"iconPath": "static/tabbar/home.png",
-				"selectedIconPath": "static/tabbar/home-active.png",
-				"text": "首页"
-			},
+			"color": "#7A7E83",
+			"selectedColor": "#3cc51f",
+			"borderStyle": "white",
+			"backgroundColor": "#f4f5f7",
+			"custom": true,
+			"list": [{
+						"iconPath": "home",
+						"selectedIconPath": "home-fill",
+						"text": "首页",
+						"pagePath": "pages/doctor/home",
+						"customIcon": false
+					},
+					{
+						"iconPath": "photo",
+						"selectedIconPath": "photo-fill",
+						"text": "数据可视化",
+						"pagePath": "pages/doctor/dash_board",
+						"customIcon": false
+					},
+					{
+						"iconPath": "account",
+						"selectedIconPath": "account-fill",
+						"text": "我的",
+						"pagePath": "pages/doctor/personal",
+						"isDot": false,
+						"customIcon": false
+					}
+				],
+			"current": 0
+		},
+
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
 			{
-				"pagePath": "pages/tabbar/user/user",
-				"iconPath": "static/tabbar/user.png",
-				"selectedIconPath": "static/tabbar/user-active.png",
-				"text": "我的"
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
 			}
 		]
 	}

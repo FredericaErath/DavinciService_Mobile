@@ -9,6 +9,7 @@
     "author": "vaevie520",
     "license": "ISC",
     "dependencies": {
+        "echarts": "^5.4.3",
         "jweixin-module": "^1.6.0",
         "uview-ui": "^1.8.1"
     },

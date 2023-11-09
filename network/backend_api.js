@@ -22,9 +22,15 @@ export const get_consumable = (data) =>
 export const get_surgery = (data) =>
   requests({ url: 'admin/get_surgery', method: 'post', data})
 export const insert_surgery = (data) =>
-  requests({ url: 'admin/insert_surgery_admin', method: 'post', data})
-//dashboard
-export const get_surgery_dashobard = (data) =>
-  requests({ url: 'admin/get_surgery_dashboard', method: 'post', data})
+  requests({ url: 'nurse/insert_surgery_user', method: 'post', data})
+//doctor
+export const get_general_data = (data) =>
+  requests({ url: 'doctor/get_general_data', method: 'post', data})
+export const get_surgery_time_series = (data) =>
+  requests({ url: 'doctor/get_surgery_time_series', method: 'post', data})
 export const get_doctor_contribution = (data) =>
-  requests({ url: 'admin/get_doctor_contribution', method: 'post', data})
+  requests({ url: 'doctor/get_doctor_contribution', method: 'post', data})
+export const get_surgery_by_date = (data) =>
+  requests({ url: 'doctor/get_surgery_by_date', method: 'post', data})
+export const send_message = (data) =>
+  requests({ url: 'doctor/send_message', method: 'post', data})

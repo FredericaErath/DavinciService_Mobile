@@ -3,7 +3,9 @@
     "pages/tabbar/index/index",
     "pages/tabbar/user/user",
     "pages/user/login/login",
-    "pages/wxDemo/wxDemo"
+    "pages/wxDemo/wxDemo",
+    "pages/nurse/surgery",
+    "pages/doctor/dash_board"
   ],
   "subPackages": [],
   "window": {
