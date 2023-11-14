@@ -52,6 +52,13 @@
 				"navigationBarTitleText": "医生主页",
 				"navigationStyle": "custom"
 			}
+		},
+		{
+			"path": "pages/doctor/message_center",
+			"style": {
+				"navigationBarTitleText": "意见中心",
+				"navigationStyle": "custom"
+			}
 		}
 	],
 	"globalStyle": {
